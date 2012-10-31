@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- Copyright (c) 2011 Valeriy Chevtaev, chupakabr.ru, myltik@gmail.com -->
+<html>
+  <head>
+    <script>
+    	
+		// If vk.com page then
+		function checkForValidUrl(tabId, changeInfo, tab) {
+			if (tab.url.indexOf('vk.com') > -1 || tab.url.indexOf('vkontakte.ru') > -1) {
+				// ... show the page action.
+				chrome.pageAction.show(tabId);
+			}
+		};
+		
+		// Listen for any changes to the URL of any tab.
+		chrome.tabs.onUpdated.addListener(checkForValidUrl);
+		
+		// On extension's icon click run parser and generate links
+		chrome.pageAction.onClicked.addListener(function(tab) {
+			chrome.tabs.executeScript(null, {file: "impl.js"});
+		});
+		
+    </script>
+  </head>
+</html>
