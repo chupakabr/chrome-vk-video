@@ -1,13 +1,18 @@
 {
+  "manifest_version": 2,
   "name": "VideoVkontakte",
-  "version": "1.0",
+  "version": "1.2",
   "description": "Download video from vk.com/vkontake.ru social network to your computer.",
-  "background_page": "bg.html",
+  "background": {
+    "scripts": ["bg.js"]
+  },
   "page_action": {
     "default_icon" : "icon.png",
     "default_title" : "Click to show video links"
   },
   "permissions": [
-    "tabs", "http://*/*", "https://*/*"
+    "tabs",
+    "http://www.vk.com/*", "http://vk.com/*",
+    "https://www.vkontakte.ru/*", "https://vkontakte.ru/*"
   ]
 }
