@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "VideoVkontakte",
-  "version": "1.3",
+  "version": "1.4",
   "description": "Download video from vk.com/vkontake.ru social network to your computer.",
   "background": {
     "scripts": ["bg.js"]
